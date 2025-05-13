@@ -31,8 +31,11 @@ public class Cliente {
     private String region;
     private String pais;
     private String codigoPostal;
-    @Column(name="codigo_empleado_rep_ventas")
-    private Integer codigoRepVentas;
+
+    @ManyToOne
+    @JoinColumn(name="fk_empleado")
+    private Empleado repVentas;
+
     private Double limiteCredito;
 
     @Override

@@ -1,10 +1,11 @@
 package org.cplcursos.jpahibernateejercicioclase.entidades;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 
 @Getter
@@ -26,6 +27,10 @@ public class Empleado {
     @Column(name="codigo_oficina")
     private String codigoOficina; // Clave foránea para Oficina
     private Integer codigoJefe; // Podría ser clave foránea a Empleado (auto-referencia)
+
+
+    @OneToMany(mappedBy = "repVentas", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Cliente> clientes;
 
     public String nombreYApellido() {
         return nombre + " " + apellido1;
