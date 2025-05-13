@@ -17,7 +17,7 @@ public class ClienteCtrl {
     @GetMapping({"/clientes", "/clientes/"})
     public String listaClientes(Model modelo){
         modelo.addAttribute("titulo", "Lista de clientes");
-        modelo.addAttribute("clientes", clienteSrvc.listarClientes());
+        modelo.addAttribute("listaClientes", clienteSrvc.listarClientes());
         return "listaClientes";
     }
 }

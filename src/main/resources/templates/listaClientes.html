@@ -17,11 +17,11 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr th:each="cli : ${clientes}">
-			<td th:text="${cli.codigo_cliente}">1</td>
-			<td th:text="${cli.nombre_cliente}">Carlos</td>
-			<td th:text="${cli.telefono}">+34912569874</td>
-			<td th:text="${cli.ciudad}">Madrid</td>
+		<tr th:each="cliente : ${listaClientes}">
+			<td th:text="${cliente.codigoCliente}">1</td>
+			<td th:text="${cliente.nombreCliente}">Carlos</td>
+			<td th:text="${cliente.telefono}">+34912569874</td>
+			<td th:text="${cliente.ciudad}">Madrid</td>
 		</tr>
 	</tbody>
 	<td></td>

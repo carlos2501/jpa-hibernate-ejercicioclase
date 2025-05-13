@@ -13,28 +13,30 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="clientes")
 @Entity
+@Table(name="clientes")
 public class Cliente {
     @Id
-    private Integer codigo_cliente;
-    private String nombre_cliente;
-    private String nombre_contacto;
-    private String apellido_contacto;
+    private Integer codigoCliente;
+    private String nombreCliente;
+    private String nombreContacto;
+    private String apellidoContacto;
     private String telefono;
     private String fax;
-    private String linea_direccion1;
-    private String linea_direccion2;
+    @Column(name="linea_direccion1")
+    private String lineaDireccion1;
+    @Column(name="linea_direccion2")
+    private String lineaDireccion2;
     private String ciudad;
     private String region;
     private String pais;
-    private String codigo_postal;
+    private String codigoPostal;
     @Column(name="codigo_empleado_rep_ventas")
-    private Integer codigo_rep_ventas;
-    private Double limite_credito;
+    private Integer codigoRepVentas;
+    private Double limiteCredito;
 
     @Override
     public String toString(){
-        return "Cliente " + nombre_cliente + " teléfono " + telefono;
+        return "Cliente " + nombreCliente + " teléfono " + telefono;
     }
 }
