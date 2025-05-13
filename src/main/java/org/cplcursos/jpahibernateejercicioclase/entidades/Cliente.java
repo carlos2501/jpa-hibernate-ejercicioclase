@@ -1,9 +1,6 @@
 package org.cplcursos.jpahibernateejercicioclase.entidades;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,7 +14,10 @@ import lombok.Setter;
 @Table(name="clientes")
 public class Cliente {
     @Id
-    private Integer codigoCliente;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "codigo_cliente", nullable = false)
+    private Long codigoCliente;
+
     private String nombreCliente;
     private String nombreContacto;
     private String apellidoContacto;

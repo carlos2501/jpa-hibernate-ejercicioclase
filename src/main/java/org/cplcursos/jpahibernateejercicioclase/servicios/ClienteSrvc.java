@@ -4,6 +4,7 @@ import org.cplcursos.jpahibernateejercicioclase.entidades.Cliente;
 import org.cplcursos.jpahibernateejercicioclase.repos.ClienteRepo;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,7 +16,7 @@ public class ClienteSrvc {
         this.clienteRepo = clienteRepo;
     }
 
-    public Iterable<Cliente> listarClientes() {
+    public List<Cliente> listarClientes() {
         return clienteRepo.findAll();
     }
 

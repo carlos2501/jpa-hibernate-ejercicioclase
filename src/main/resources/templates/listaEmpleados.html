@@ -12,16 +12,16 @@
 		<tr>
 			<th>Id</th>
 			<th>Nombre</th>
-			<th>Primer Apellido</th>
-			<th>C. Electrónico</th>
+			<th>teléfono</th>
+			<th>Ciudad</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr th:each="cliente : ${listaClientes}">
-			<td th:text="${cliente.codigoCliente}">1</td>
-			<td th:text="${cliente.nombreCliente}">Carlos</td>
-			<td th:text="${cliente.telefono}">+34912569874</td>
-			<td th:text="${cliente.ciudad}">Madrid</td>
+		<tr th:each="emp : ${listaEmpleados}">
+			<td th:text="${emp.getCodigoEmpleado()}">1</td>
+			<td th:text="${emp.getNombre()}">Carlos</td>
+			<td th:text="${emp.getApellido1()}">+34912569874</td>
+			<td th:text="${emp.getEmail()}">Madrid</td>
 		</tr>
 	</tbody>
 	<td></td>
