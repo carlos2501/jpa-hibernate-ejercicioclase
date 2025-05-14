@@ -32,8 +32,8 @@ public class Pedido {
     @Column(name = "comentarios")
     private String comentarios;
 
-    @Column(name = "codigo_cliente", nullable = false)
-    private Integer codigoCliente;
+    @ManyToOne
+    private Cliente codigoCliente;
 
     @ManyToMany
     @JoinTable(
