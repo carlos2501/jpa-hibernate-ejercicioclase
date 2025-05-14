@@ -3,8 +3,6 @@ package org.cplcursos.jpahibernateejercicioclase.entidades;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 
@@ -15,6 +13,10 @@ import java.util.Set;
 @AllArgsConstructor
 @Table(name="empleados") // Mapea a la tabla 'empleado'
 @Entity
+@NamedEntityGraph(
+        name="grafoEmpleado",
+        attributeNodes = {@NamedAttributeNode("clientes")}
+)
 public class Empleado {
     @Id
     private Integer codigoEmpleado;
@@ -29,10 +31,18 @@ public class Empleado {
     private Integer codigoJefe; // Podría ser clave foránea a Empleado (auto-referencia)
 
 
-    @OneToMany(mappedBy = "repVentas", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "repVentas")
     private Set<Cliente> clientes;
 
     public String nombreYApellido() {
         return nombre + " " + apellido1;
+    }
+
+    public void nuevoCliente(Cliente cliente) {
+        clientes.add(cliente);
+    }
+
+    public void quitarCliente(Cliente cliente) {
+        clientes.remove(cliente);
     }
 }

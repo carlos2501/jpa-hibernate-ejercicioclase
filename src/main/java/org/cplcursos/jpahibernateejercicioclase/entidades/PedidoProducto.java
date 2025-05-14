@@ -1,8 +1,6 @@
 package org.cplcursos.jpahibernateejercicioclase.entidades;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
 

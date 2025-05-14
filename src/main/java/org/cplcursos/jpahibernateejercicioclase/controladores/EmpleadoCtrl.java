@@ -1,6 +1,5 @@
 package org.cplcursos.jpahibernateejercicioclase.controladores;
 
-import org.cplcursos.jpahibernateejercicioclase.entidades.Empleado;
 import org.cplcursos.jpahibernateejercicioclase.servicios.EmpleadoSrvc;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +18,7 @@ public class EmpleadoCtrl {
         modelo.addAttribute("titulo", "Lista de clientes");
         modelo.addAttribute("listaEmpleados", empleadoSrvc.listarEmpleados());
 
-        Empleado emp = empleadoSrvc.buscarEmpleadoPorId(11).get();
+        //Empleado emp = empleadoSrvc.buscarEmpleadoPorId(11).get();
 
 
         return "listaEmpleados";
